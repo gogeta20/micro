@@ -1,0 +1,108 @@
+version: '3.9'
+
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: devops/dockerfiles/ci/Jenkins.Dockerfile
+    container_name: jenkins_micro
+    user: root
+    ports:
+      - "8081:8080"
+      - "50000:50000"
+    volumes:
+      - ./devops/volumes/jenkins:/var/jenkins_home
+
+  vue_frontend:
+    build:
+#      context: ./project/front/vue
+      context: .
+      dockerfile: devops/dockerfiles/frontend/Vue.Dockerfile
+    container_name: vue_frontend_micro
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./project/front/vue:/app
+
+
+  symfony_backend:
+    build:
+#      context: ./project/backend/symfony
+      context: .
+      dockerfile: devops/dockerfiles/backend/Symfony.Dockerfile
+    container_name: symfony_backend
+    ports:
+      - "8001:80"
+    volumes:
+      - ./project/backend/symfony:/var/www/html
+
+  django_backend:
+    build:
+#      context: ./project/backend/django
+      context: .
+      dockerfile: devops/dockerfiles/backend/Django.Dockerfile
+    container_name: django_backend
+    ports:
+      - "8000:8000"
+
+  springboot_backend:
+    build:
+#      context: ./project/backend/springboot
+      context: .
+      dockerfile: devops/dockerfiles/backend/SpringBoot.Dockerfile
+    container_name: springboot_backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./project/backend/springboot:/app
+
+  rabbitmq:
+    build:
+      context: .
+      dockerfile: devops/dockerfiles/broker/RabbitMQ.Dockerfile
+    container_name: rabbitmq
+    ports:
+      - "15672:15672"  # Puerto para el panel de administración
+      - "5672:5672"     # Puerto para las conexiones de los clientes
+
+  mysql_db:
+    build:
+      context: .
+      dockerfile: devops/dockerfiles/db/MySQL.Dockerfile
+    container_name: mysql_db_micro
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./devops/volumes/mysql:/var/lib/mysql
+
+  postgres_db:
+    build:
+      context: .
+      dockerfile: devops/dockerfiles/db/PostgreSQL.Dockerfile
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: my_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./devops/volumes/postgres:/var/lib/postgresql/data
+
+  nginx_proxy:
+    build:
+      context: .
+      dockerfile: devops/dockerfiles/proxy/Nginx.Dockerfile
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - symfony_backend
+      - django_backend
+      - springboot_backend
+      - vue_frontend

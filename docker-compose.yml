@@ -18,7 +18,7 @@ services:
 #      context: ./project/front/vue
       context: .
       dockerfile: devops/dockerfiles/frontend/Vue.Dockerfile
-    container_name: vue_frontend_micro
+    container_name: front_micro
     ports:
       - "5173:5173"
     volumes:

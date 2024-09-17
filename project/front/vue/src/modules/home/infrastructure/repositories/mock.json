@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "id": 89049,
+      "dataInicio": "2023-04-12 14:25:40.000000",
+      "aviso": "O instrumento PO-00020388X(1.2) - Proxecto de ordenaci&oacute;n forestal DE CASTROMIL (Concello de: MEZQUITA (A))  cambiou de estado Pendente de proposta resoluci&oacute;n positiva a estado Proposta resoluci&oacute;n positiva <a href=\"http://localhost/montes/xorfor/branches/cambiosnormativa2/xorfor-web/src/main/php/Instrumento/datosxerais/20388\">(Ver)</a>",
+      "codDistrito": null,
+      "codProvincia": null,
+      "tipoAviso": "PPROP",
+      "usuario": null,
+      "codTramite": null,
+      "idxf": 20388,
+      "title": "Aviso para servicios centrais",
+      "date": "2023-04-12 14:25:40.000000"
+    },
+    {
+      "id": 89048,
+      "dataInicio": "2023-04-12 13:35:34.000000",
+      "aviso": "Con data 12/04/2023 respondeuse ao informe de avaliaci&oacute;n t&eacute;cnica do instrumento PO-00020388X(1.2) - Proxecto de ordenaci&oacute;n forestal DE CASTROMIL (Concello de: MEZQUITA (A))  <a href=\"http://localhost/montes/xorfor/branches/simplificacion/xorfor-web/src/main/php/Tramitacion/editarInformeDistrito/20388/12979\">(Ver)</a>",
+      "codDistrito": null,
+      "codProvincia": "32",
+      "codTipo": "PO",
+      "tipoAviso": "INFDC",
+      "usuario": null,
+      "codTramite": null,
+      "idxf": 20388,
+      "title": "Aviso para a provincia de Ourense",
+      "date": "2023-04-12 13:35:34.000000"
+    },
+    {
+      "id": 89047,
+      "dataInicio": "2023-04-12 13:20:45.000000",
+      "aviso": "O instrumento PO-00020904C(1.2) - Proxecto de ordenaci&oacute;n forestal PI&Ntilde;EIRO (Concello de: MAR&Iacute;N,MOA&Ntilde;A,VILABOA)  cambiou de estado Pendente de proposta resoluci&oacute;n positiva a estado Proposta resoluci&oacute;n positiva <a href=\"http://localhost/montes/xorfor/branches/cambiosnormativa2/xorfor-web/src/main/php/Instrumento/datosxerais/20904\">(Ver)</a>",
+      "codDistrito": null,
+      "codProvincia": null,
+      "codTipo": "DSX",
+      "tipoAviso": "PPROP",
+      "usuario": null,
+      "codTramite": null,
+      "idxf": 20904,
+      "title": "Aviso para servicios centrais",
+      "date": "2023-04-12 13:20:45.000000"
+    },
+    {
+      "id": 89050,
+      "dataInicio": "2023-04-12 16:56:43.000000",
+      "aviso": "O estado do instrumento PO-00066045N(1.1) - Proxecto de ordenaci&oacute;n forestal MONTE M&Oacute;NICA BURELA (Concello de: BURELA,CHANTADA)  pasou a En convalidaci&oacute;n",
+      "codDistrito": null,
+      "codProvincia": "27",
+      "codTipo": "DCX",
+      "tipoAviso": "PPPVL",
+      "usuario": null,
+      "codTramite": null,
+      "idxf": 66045,
+      "title": "Aviso para a provincia de Lugo",
+      "date": "2023-04-12 16:56:43.000000"
+    }
+  ],
+    "message": "A consulta foi realizada correctamente.",
+      "status": 200
+}

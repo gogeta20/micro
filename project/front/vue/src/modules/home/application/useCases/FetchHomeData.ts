@@ -1,10 +1,11 @@
-import { HomeService } from '@/modules/home/domain/services/HomeService';
+import HomeService from '@/modules/home/domain/services/HomeService';
 import { HomeEntity } from '@/modules/home/domain/entities/HomeEntity';
+import HttpHomeRepository from '@/modules/home/infrastructure/repositories/HttpHomeRepository';
 
 export class FetchHomeData {
-  private homeService: typeof HomeService;
+  private homeService: HomeService;
 
-  constructor(homeService: typeof HomeService) {
+  constructor(homeService: HomeService) {
     this.homeService = homeService;
   }
 
@@ -19,5 +20,4 @@ export class FetchHomeData {
   }
 }
 
-// Exportar una instancia del caso de uso
-export default new FetchHomeData(HomeService);
+export default new FetchHomeData(new HomeService(new HttpHomeRepository()));

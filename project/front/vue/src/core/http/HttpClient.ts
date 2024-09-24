@@ -2,17 +2,19 @@ import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosResponse 
 const baseURL = import.meta.env.VITE_BASE_URL;
 
 class HttpClient {
-  private instance: AxiosInstance;
+  private instanceSymfony: AxiosInstance;
+  // private instanceDjango: AxiosInstance;
+  // private instanceBoot: AxiosInstance;
 
   constructor() {
-    this.instance = axios.create({
+    this.instanceSymfony = axios.create({
       baseURL,
       timeout: 10000, // 10 segundos
     });
 
     // Configurar interceptores de solicitud
-    this.instance.interceptors.request.use(
-      (config: AxiosRequestConfig) => {
+    this.instanceSymfony.interceptors.request.use(
+      (config: any) => {
         console.log(`Request: ${config.method?.toUpperCase()} ${config.url}`);
         return config;
       },
@@ -22,7 +24,7 @@ class HttpClient {
     );
 
     // Configurar interceptores de respuesta
-    this.instance.interceptors.response.use(
+    this.instanceSymfony.interceptors.response.use(
       (response: AxiosResponse) => {
         return response;
       },
@@ -33,19 +35,19 @@ class HttpClient {
   }
 
   public get<T>(url: string, params?: any): Promise<AxiosResponse<T>> {
-    return this.instance.get(url, { params });
+    return this.instanceSymfony.get(url, { params });
   }
 
   public post<T>(url: string, data?: any): Promise<AxiosResponse<T>> {
-    return this.instance.post(url, data);
+    return this.instanceSymfony.post(url, data);
   }
 
   public put<T>(url: string, data?: any): Promise<AxiosResponse<T>> {
-    return this.instance.put(url, data);
+    return this.instanceSymfony.put(url, data);
   }
 
   public delete<T>(url: string): Promise<AxiosResponse<T>> {
-    return this.instance.delete(url);
+    return this.instanceSymfony.delete(url);
   }
 }
 

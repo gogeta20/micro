@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git url: 'git@github.com:gogeta20/micro.git', branch: 'master'
+                git url: 'git@github.com:gogeta20/micro.git', branch: 'master',credentialsId: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCxUMkdzbh8gyCwsiHmRm/wpmO+Rmc0HZDVUDi/CLgerReqxWYKYvJi5WX6NClGd4YlqVwXSUdPHYAO9FYCvVIr960m17XQXu+3OyDPz/PCDSynyk7fjeo1nfkz2wXRIu/5SPFFL8uM6HquvNBt1LPNyyo1tbodH4wNfJMFCUrNK8tJJRzIVyCnQe5nLNBUb5keaRmld42hxBuldBrBeI+25co2D/1ZKxU0CZupEvhA0XxQbZlgFb+9iJA3ls/cdaEz2EOvzsgMIJQabs7+yABDe69Bq2FXnqHyBKMI9u6gzQiTzA/Q/dPq3pGesOwGCX5We8n2W7zRNzfYVpD6nNFagZVlW3Ff+XGTS4K2c1JdbSu/9M2T/eYsF1CoOoOe/4SCNJR6vbw1NzFoPBfigIcMxFr20eLuXBe89duF/Kp2FNjr/H7GbFyUa0JF1/CRG4U5BMKd4aJeunjp+nJExBUUWrsnBn18MECnjeNsJqh9Q5PD0c5J5qebmBwuL+NnP9WFA4C/ehejA5mP/j/89IzTGl0TTR+2AjDqE8KJhvXwUEOidUovBdg3BladyCifFzt8coTASq0lRphXeVUja01/eHY8MQRiEUkd4XqsNjH8dwUQq7s/rEtLPXYPXULnXT25xj7MTP1brRsInqUUYq5//xNdIU3tHAQ6O+FxFauhCw== linuxlite20@gmail.com'
             }
         }
 

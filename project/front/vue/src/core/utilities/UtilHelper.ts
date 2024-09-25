@@ -122,38 +122,6 @@ export class UtilHelper {
   }
 
   /**
-   * Convierte una archivo a base64
-   */
-  static convertFileToBase64(file: File, withMetaData = false) {
-    return new Promise<ItemFile>((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        if (withMetaData) {
-          resolve({
-            base64: reader.result as string,
-            fileName: file.name,
-            fileSize: file.size,
-            fileType: file.type,
-          });
-        } else {
-          let encoded = reader.result?.toString().replace(/^data:(.*,)?/, "");
-          if (encoded && encoded.length % 4 > 0) {
-            encoded += "=".repeat(4 - (encoded.length % 4));
-          }
-          resolve({
-            base64: encoded as string,
-            fileName: file.name,
-            fileSize: file.size,
-            fileType: file.type,
-          });
-        }
-      };
-      reader.onerror = (error) => reject(error);
-    });
-  }
-
-  /**
    *
    */
   static convertBase64ToBlob(base64: string, mimeType: string) {

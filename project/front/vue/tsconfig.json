@@ -12,6 +12,10 @@
     }
   ],
   "compilerOptions": {
-    "module": "NodeNext"
+    "module": "NodeNext",
+    "baseUrl": "./src", // Ruta base para resolver los módulos con '@'
+    "paths": {
+      "@/*": ["*"]
+    }
   }
 }

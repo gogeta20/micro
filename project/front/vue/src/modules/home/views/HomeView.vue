@@ -13,7 +13,6 @@
     <div class="functionality">
       <h2>Procesar Archivo de Datos Masivo (Spring Boot)</h2>
       <p>Sube y procesa un archivo CSV de gran tamaño, aplicando validaciones y almacenando los datos.</p>
-      <input type="file" @change="uploadFile($event)">
       <button @click="processLargeFile">Procesar Archivo</button>
     </div>
 

@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        VUE_DOCKER_IMAGE = 'node:18 '
+        VUE_DOCKER_IMAGE = 'node:16'
         SYMFONY_DOCKER_IMAGE = 'Symfony.Dockerfile'
         DJANGO_DOCKER_IMAGE = 'python:3.10'
         SPRINGBOOT_DOCKER_IMAGE = 'maven:3.8.7-eclipse-temurin-17'

@@ -190,47 +190,4 @@ export class UtilHelper {
       );
     });
   }
-  /**
-   * Elimina los valores Falsy
-   */
-  static removeFalsyValues<T>(object: T) {
-    return Object.fromEntries(Object.entries(object).filter(([, v]) => !!v));
-  }
-
-  /**
-   * Toma un objeto y un mapa de claves para nuevas claves, y devuelve un nuevo objeto con las claves renombradas
-   * manteniendo los valores iguales
-   */
-  static renameKeys(keysMap: RenameKeys, obj: RenameKeys) {
-    return Object.keys(obj).reduce(
-      (acc, key) => ({
-        ...acc,
-        ...{ [keysMap[key] || key]: obj[key] },
-      }),
-      {}
-    );
-  }
-
-  static makeSort(keysMap: RenameKeys, obj: RenameKeys) {
-    return Object.entries(UtilHelper.renameKeys(keysMap, obj)).join(",");
-  }
-
-  static deleteCookie(name: string) {
-    document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-  }
-  static createCookie(name: string, value: any, days = 1) {
-    let expires = undefined;
-    if (days) {
-      const date = new Date();
-      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-      expires = "; expires=" + date.toUTCString();
-    } else {
-      expires = "";
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
-  }
-
-  static clone(param: any) {
-    return JSON.parse(JSON.stringify(param));
-  }
 }

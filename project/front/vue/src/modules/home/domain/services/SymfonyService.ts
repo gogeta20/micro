@@ -1,4 +1,5 @@
-import type { SymfonyRepository } from '@/modules/symfony/domain/repositories/SymfonyRepository';
+// import type { SymfonyRepository } from '@/modules/symfony/domain/repositories/SymfonyRepository';
+import type { SymfonyRepository } from '@/modules/home/domain/repositories/SymfonyRepository';
 
 export class SymfonyService {
 

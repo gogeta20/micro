@@ -2,13 +2,18 @@ pipeline {
     agent any
 
     environment {
-        VUE_DOCKER_IMAGE = 'node:16'
-        SYMFONY_DOCKER_IMAGE = 'php:8.0-fpm'
-        DJANGO_DOCKER_IMAGE = 'python:3.8'
-        SPRINGBOOT_DOCKER_IMAGE = 'openjdk:11'
+        VUE_DOCKER_IMAGE = 'node:18-alpine'
+        SYMFONY_DOCKER_IMAGE = 'Symfony.Dockerfile'
+        DJANGO_DOCKER_IMAGE = 'python:3.10'
+        SPRINGBOOT_DOCKER_IMAGE = 'maven:3.8.7-eclipse-temurin-17'
     }
 
     stages {
+        stage('Test Docker') {
+             steps {
+                sh 'docker --version'
+             }
+        }
         stage('Checkout Code') {
             steps {
                 git url: 'https://github.com/gogeta20/micro.git', branch: 'master',credentialsId: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCxUMkdzbh8gyCwsiHmRm/wpmO+Rmc0HZDVUDi/CLgerReqxWYKYvJi5WX6NClGd4YlqVwXSUdPHYAO9FYCvVIr960m17XQXu+3OyDPz/PCDSynyk7fjeo1nfkz2wXRIu/5SPFFL8uM6HquvNBt1LPNyyo1tbodH4wNfJMFCUrNK8tJJRzIVyCnQe5nLNBUb5keaRmld42hxBuldBrBeI+25co2D/1ZKxU0CZupEvhA0XxQbZlgFb+9iJA3ls/cdaEz2EOvzsgMIJQabs7+yABDe69Bq2FXnqHyBKMI9u6gzQiTzA/Q/dPq3pGesOwGCX5We8n2W7zRNzfYVpD6nNFagZVlW3Ff+XGTS4K2c1JdbSu/9M2T/eYsF1CoOoOe/4SCNJR6vbw1NzFoPBfigIcMxFr20eLuXBe89duF/Kp2FNjr/H7GbFyUa0JF1/CRG4U5BMKd4aJeunjp+nJExBUUWrsnBn18MECnjeNsJqh9Q5PD0c5J5qebmBwuL+NnP9WFA4C/ehejA5mP/j/89IzTGl0TTR+2AjDqE8KJhvXwUEOidUovBdg3BladyCifFzt8coTASq0lRphXeVUja01/eHY8MQRiEUkd4XqsNjH8dwUQq7s/rEtLPXYPXULnXT25xj7MTP1brRsInqUUYq5//xNdIU3tHAQ6O+FxFauhCw== linuxlite20@gmail.com'

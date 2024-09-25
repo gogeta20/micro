@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         VUE_DOCKER_IMAGE = 'node:18'
-        SYMFONY_DOCKER_IMAGE = 'Symfony.Dockerfile'
+        SYMFONY_DOCKER_IMAGE = 'php:8.2.12-apache'
         DJANGO_DOCKER_IMAGE = 'python:3.10'
         SPRINGBOOT_DOCKER_IMAGE = 'maven:3.8.7-eclipse-temurin-17'
     }

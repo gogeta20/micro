@@ -3,7 +3,8 @@ pipeline {
 
     environment {
         VUE_DOCKER_IMAGE = 'node:18'
-        SYMFONY_DOCKER_IMAGE = 'php:8.2.12-apache'
+//         SYMFONY_DOCKER_IMAGE = 'php:8.2.12-apache'
+        SYMFONY_DOCKER_IMAGE = 'composer:2.6'
         DJANGO_DOCKER_IMAGE = 'python:3.10'
         SPRINGBOOT_DOCKER_IMAGE = 'maven:3.8.7-eclipse-temurin-17'
     }
